@@ -1,5 +1,5 @@
 # memory-manager
-A simple memory manager written in C for Insomniac games interview.
+A simple memory manager written in C++ (using C semantics) for Insomniac games interview.
 ### How it works
 This solution byte-aligns the requested space in bytes and includes a 2 byte header
   The header contains a signature denoting an occupied block in 2 bits and the rest of 
