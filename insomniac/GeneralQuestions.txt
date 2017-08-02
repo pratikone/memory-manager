@@ -1,0 +1,49 @@
+Briefly address the following points, modify this text file and include it 
+in your reply.
+------------------------------------------------------------------------------
+
+ 
+Explain the conceptual distinctions between scripting languages, C++, C, 
+and assembly and when it is appropriate and inappropriate to use each.
+--------------------------------------
+Scripting languages are mostly interpreted and memory managed. C and C++ are both compiled languages
+with manual memory management. Scripted languages are mostly high level and have been designed for keeping
+ease of use and simplicity as the priority, thus have high overhead. C and C++ are both all purpose languages which can be used for  high-level and moderately low level of coding. They provide enough tools to choose between ease of use or performance optimization and have quite low overhead. Memory management plays a big role in this regard. For example, C is procedural but C++ supports both procedural and object oriented paradigms out of the box. Assembly is the closest to bare metal one can get. Assembly langauge is low level and assembled. It has no overheads of scripting languages or C/C++. Its mnemonics are directly converted to machine code. 
+For situations where faster development and ease of use is a priority, scripting language should be used. They are not very suitable in writing complex and large software.
+C and C++ are versatile enough to be used for large number of cases, especially in development of complex, critical piece of
+software which should be maintainable. Their compilers are optimizeed enough to give good performance. For higher level operations like web applications, etc. a lot of apis are not available on these platforms and scripting language become a good choice. 
+Assembly language should only be used in special cases where extreme optimizations are needed esp those procedures whose small speedup will have a bigger impact on the overall system. They are notoriosuly difficult to maintain and should be used in those cases.
+
+Describe the limitations of code reuse through inheritance in a large, 
+diverse codebase.  Propose alternative solutions to these limitations.
+--------------------------------------
+In large enough codebases, code reuse using inheritance results in a lot of unwanted code becoming part of the object, 
+increasing the memory footprint of the class objects. Also, it is not maintainable. A small change in api in the parent class
+results in ripple effet of required code changes in the child classes. 
+Deep level of inheritance should be avoided. Instead, compostion of different objects, helper classes etc (other design patterns) should be used.
+
+Compare and contrast the biggest challenges of console game development
+versus PC game development.
+--------------------------------------
+In consoles, the biggest challenge is maximizing the use of available limited resources as they cannot be upgraded. This is 
+not a problem with PC development as PCs can be upgraded easily to provide extra performance boost.
+On the other hand, game development on consoles is easier in regard to the fact that the consoles have same standardized hardware and thus, a game running on one console and will mostly run the same on every console of that product line. On the other hand, the PC gaming hardware scenario is wildy diverse and the game development becomes harder to account for different chipsets, motherboards, graphics card, monitor types, sound cards, etc and combination of those which could be part of a user's gaming PC.
+
+How would you attempt to understand the design of a large code base in a short
+period of time?
+--------------------------------------
+One of the fastest way to understand the desing of a large code base is to pick up one flow of functionality at once and follow its path all the way from high level code to the lowest level code. Using debug statements and traces are a good way of doing this. Also, tools like Doxygen make a block level diagrams of hierarchy and relationships of classes/functions in a codebase. This helps in understanding the relation between different components in a codebase.
+
+Talk about a few Best Practices you use when programming in a team environment.
+--------------------------------------
+1) Keeping the coding style consistent and uniform across team.
+2) Writing a lot of descriptive comments.
+3) Using version control like git and keep different branches for production, tests, development
+4) Employing good/constructive code review practices
+5) Updated high level specification document of the project
+6) Rigourous testing framework with testing requirements before committing new big changes.
+
+Discuss an instance of a bad game design decision in an otherwise good game.
+--------------------------------------
+Mandatory boss fights in Deus Ex : Human Revolution. DX:HR is a very good game which allows the player to choose its approach in sovling a problem whether it stealth, distraction, direct attack, indirect attack etc. So, it is possible to pass most of the areas in the games without even being detected by any enemies. However, there are few boss fights in the game which force the player into combat. Even though the player has been playing full stealth till then, they would have to go offensive in order to defeat the boss. This breaks the flow of the game and punishes the player for adopting a certain style of play. So, a stealth player may not have skills for combat as he/she never needed it but suddenly in the boss fight, they matter a lot. So the player cannot even go back to fix this problem. Nor does the game allow a different mechanism to balance out this unfavorable condition. Thus, even though DX:HR is a fantastic game, this part has let it down.
+I have heard that it has been partially fixed in the Director's cut of the game. But still, it is still mandatory.

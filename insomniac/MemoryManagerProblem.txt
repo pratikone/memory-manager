@@ -1,0 +1,101 @@
+Memory Manager
+------------------------------------------------------------------------------
+
+Solution Requirements
+---------------------
+Your solution should compile and be capable of managing a variable number of
+allocations and deallocations, with no requirements for deallocations to be in
+the same order as the allocations. However, a pointer will never be deallocated
+more than once.
+
+You should provide implementations of the five functions within
+MemoryManager.cpp.
+
+!! DO NOT MODIFY MemoryManager.h !!
+
+You can define additional functions within MemoryManager.cpp as necessary,
+but do not change the MemoryManager interface.
+
+Please do not include any other header files. If you need to do this for 
+development, please remove it before submission. For example if you include
+<stdio.h> for printf, please remove the printf (or comment them out) as well
+as the #include.
+
+
+Memory Restrictions
+-------------------
+- No memory dynamically allocated during program execution (new, malloc, etc.).
+- All data must fit inside MM_pool[]
+- No other static or global variables
+
+
+Common Cases
+------------
+
+On average while your system is running, there will be allocations that range
+in size from 2 bytes to 16k. You may expect 10% of the allocations will be
+8 bytes or smaller. Note that despite the average case you may be asked to 
+satisfy any sized allocation
+
+
+Error Handling
+--------------
+If you are unable to satisfy a request due to lack of memory your code should
+call the provided failure function (which will not return):
+
+namespace MemoryManager
+{
+  void onOutOfMemory();
+}
+ 
+If the caller makes any illegal request your code should call the provided 
+failure function (which will not return):
+
+namespace MemoryManager
+{
+  void onIllegalOperation(const char* fmt = 0, ... );
+}
+
+
+Compilation and Sample Output
+-----------------------------
+Please compile your implementation of MemoryManger.cpp against the provided 
+MemoryManager.h and main.cpp.
+
+The output of the provided main() should be close to:
+
+Free memory = 65530
+Free memory = 65259
+
+The actual values will depend on your implementation, these numbers are
+provided as an example.
+
+
+Scope of Problem
+----------------
+This test is intended to take a reasonable amount of time (3-4 hours), it will
+be run against a test harness that is more extensive than the main loop provided.
+Should you find that you have more time, consider testing the different edge
+cases that the problem description leads you to anticipate.
+
+
+Additional Documentation Requirements
+-------------------------------------
+Please include a description of your implementation.  You should outline areas
+in which you feel your solution could be improved given additional time and/or
+resources.  If you were unable to complete a valid solution in a reasonable
+amount of time (3-4 hours), list the areas you felt gave you the most trouble
+and some thoughts on what you've learned that you would apply to the problem
+on a second pass.  Be sure to include citations for any reference materials
+(including any discussions with other people regarding the problem) you used
+to assist you.
+
+
+Notes
+-----
+People talk, we know you don't exist in a vacuum and friends and
+colleagues can often be an invaluable resource when facing challenging
+problems.  However, be honest with yourself, if you feel you couldn't have
+come close to solving this problem without someone else's help, would you be
+happy working in an environment where you'd be called on to solve even more
+complex problems on a regular basis?
